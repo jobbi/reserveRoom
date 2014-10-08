@@ -1,10 +1,9 @@
 <?php 
-Class Connection{
-	function __construct(){
+
 	$connect = pg_connect("host=localhost port=5432 password=15052536 user=postgres dbname=reserve") or die(pg_last_error());
 		pg_query("SET NAMES tis620");
-		if(!$connect ){
-		echo "not";
+		if($connect ){
+		echo "ok";
 		exit();
 	}
 		pg_query("SET character_set_client = tis620");
@@ -17,8 +16,8 @@ Class Connection{
 		pg_query("SET collation_database = tis620_thai_ci");
 		pg_query("SET collation_server = tis620_thai_ci");
 	
-		}
-}
+		
 
-		  pg_close($connection);
+
+		
 		?>

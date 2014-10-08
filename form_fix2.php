@@ -1137,6 +1137,7 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 			</div>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
+			
 			<div class="row">
 				<div class="col-md-12">
 					<div class="tabbable tabbable-custom">
@@ -1167,22 +1168,23 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 														<th colspan="7" scope="col"><center>แสดงรายการซ่อม</center></th>
 													  </tr>
 													  <tr>
-														<td bgcolor="6699FF" align="center"width="60" height="40">วันที่</td>
-														<td bgcolor="6699FF" align="center"width="100" height="40">เวลา</td>
+														<td bgcolor="6699FF" align="center"width="60" height="40">ลำดับที่</td>
+														<td bgcolor="6699FF" align="center"width="60" height="40">วันที่ซ่อม</td>
+														<td bgcolor="6699FF" align="center"width="100" height="40">เวลาที่ซ่อม</td>
+														<td bgcolor="6699FF" align="center"width="100" height="40">ห้องประชุม</td>
 														<td bgcolor="6699FF" align="center"width="100" height="40">รายการซ่อม</td>
-														<td bgcolor="6699FF" align="center"width="150" height="40">การปฎิบัติ</td>
 														<td bgcolor="6699FF" align="center"width="65" height="40">สถานะ</td>
-														<td bgcolor="6699FF" align="center"width="80" height="40">วันที่ซ่อมเสร็จ</td>
-														<td bgcolor="6699FF" align="center"width="80" height="40">เวลาซ่อมเสร็จ</td>
+													
 													  </tr>
-														<td bgcolor ="EEEEEE" align="center" width="60" height="40"></td>
-														<td bgcolor ="EEEEEE" align="center" width="100" height="40"></td>
-														<td bgcolor ="EEEEEE" align="center" width="100" height="40"></td>
-														<td bgcolor ="EEEEEE" align="center" width="150" height="40"></td>
-														<td bgcolor ="EEEEEE" align="center" width="65" height="40"></td>
-														<td bgcolor ="EEEEEE" align="center" width="80" height="40"></td>
-														<td bgcolor ="EEEEEE" align="center" width="80" height="40"></td>
+																									  
 													  <tr>
+														<td bgcolor ="EEEEEE" align="center" width="60" height="40"<?php echo $objResult["datefix"];?>></td>
+														<td bgcolor ="EEEEEE" align="center" width="100" height="40"<?php echo $objResult["timefix"];?>></td>
+														<td bgcolor ="EEEEEE" align="center" width="100" height="40"<?php echo $objResult["select_reserve"];?>></td>
+														<td bgcolor ="EEEEEE" align="center" width="150" height="40"<?php echo $objResult[""];?>></td>
+														<td bgcolor ="EEEEEE" align="center" width="65" height="40"<?php echo $objResult["id_mem"];?>></td>
+														
+													 
 													  </tr>
 													</table>
 													</center>

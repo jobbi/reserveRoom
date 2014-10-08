@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <!-- 
 Template Name: Conquer - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.0.3
 Version: 1.5.2
@@ -50,6 +51,73 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 <link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
+<script language="javascript">
+function fncSubmit()
+{
+	if(document.form_reserve.nameuser_db.value == "")
+	{
+		alert('กรุณากรอกชื่อ');
+		document.form_reserve.nameuser_db.focus();
+		return false;
+	}	
+	
+	if(document.form_reserve.subject_db.value == "")
+	{
+		alert('กรุณากรอกหัวข้อการประชุม');
+		document.form_reserve.subject_db.focus();		
+		return false;
+	}
+	if(document.form_reserve.namepresident_db.value == "")
+	{
+		alert('กรุณากรอกชื่อประธานการประชุม');
+		document.form_reserve.namepresident_db.focus();		
+		return false;
+	}
+	if(document.form_reserve.people_db.value == "")
+	{
+		alert('กรุณาเลือกผู้เข้าประชุม');
+		document.form_reserve.people_db.focus();		
+		return false;
+	}	
+	if(document.form_reserve.amount_db.value == "")
+	{
+		alert('กรุณากรอกจำนวนผู้เข้าประชุม');
+		document.form_reserve.amount_db.focus();		
+		return false;
+	}		
+	if(document.form_reserve.select_reserve_db.value == "")
+	{
+		alert('กรุณาเลือกห้องประชุม');
+		document.form_reserve.select_reserve_db.focus();		
+		return false;
+	}
+	if(document.form_reserve.datefrom_db.value == "")
+	{
+		alert('กรุณาเลือกวันที่การประชุม');
+		document.form_reserve.datefrom_db.focus();		
+		return false;
+	}		
+	if(document.form_reserve.timefrom_db.value == "")
+	{
+		alert('กรุณาระบุเวลาเริ่มการประชุม');
+		document.form_reserve.timefrom_db.focus();		
+		return false;
+	}		
+	if(document.form_reserve.timeto_db.value == "")
+	{
+		alert('กรุณาระบุเวลาจบการประชุม');
+		document.form_reserve.timeto_db.focus();		
+		return false;
+	}		
+	if(document.form_reserve.description_db.value == "")
+	{
+		alert('กรุณากรอกรายเอียดการประชุม');
+		document.form_reserve.description_db.focus();		
+		return false;
+	}		
+	document.form_reserve.submit();
+}
+</script>
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -1133,21 +1201,6 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 			</div>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 			<div class="row">
 				<div class="col-md-12">
 					<!-- BEGIN PORTLET-->
@@ -1166,12 +1219,12 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 						
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
-							<form action="save_reserve.php" method="post" class="form-horizontal form-bordered" >
+							<form name ="form_reserve" action="save_reserve.php" method="post" class="form-horizontal form-bordered" onSubmit="JavaScript:return fncSubmit();>
 								<div class="form-body">
 									<div class="form-group">
 									<label class="control-label col-md-3">ชื่อผู้จอง</label>
 										<div class="col-md-4">
-											<input type="text" class="form-control" maxlength="25" name="nameuser_db" id="maxlength_defaultconfig">
+											<input type="text" class="form-control" maxlength="25" name="nameuser" id="maxlength_defaultconfig">
 											<span class="help-block">
 												
 											</span>
@@ -1182,7 +1235,7 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 									<div class="form-group">
 									<label class="control-label col-md-3">หัวข้อประชุม</label>
 										<div class="col-md-4">
-											<input type="text" class="form-control" maxlength="25" name="subject_db" id="maxlength_defaultconfig">
+											<input type="text" class="form-control" maxlength="25" name="subject" id="maxlength_defaultconfig">
 											<span class="help-block">
 												
 											</span>
@@ -1191,7 +1244,7 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 									<div class="form-group">
 									<label class="control-label col-md-3">ชื่อประธานการประชุม</label>
 										<div class="col-md-4">
-											<input type="text" class="form-control" maxlength="25" name="namepresident_db" id="maxlength_defaultconfig">
+											<input type="text" class="form-control" maxlength="25" name="namepresident" id="maxlength_defaultconfig">
 											<span class="help-block">
 												 
 											</span>
@@ -1202,7 +1255,7 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 									<label class="control-label col-md-3">รายชื่อผู้เข้าร่วมการประชุม</label>
 												<div class="form-group last">
 										<div class="col-md-9">
-											<select name="people_db" class="multi-select" multiple="" id="my_multi_select3">
+											<select name="people" class="multi-select" multiple="" id="my_multi_select3">
 												<option value="CI">นาย</option>
 												<option value="HR">นาง</option>
 												<option value="CU">นางสาว</option>
@@ -1215,7 +1268,7 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 									<div class="form-group">
 									<label class="control-label col-md-3">จำนวนผู้เข้าร่วมประชุม</label>
 										<div class="col-md-4">
-											<input class="form-control" id="mask_number" type="text" name="amount_db"/>
+											<input class="form-control" id="mask_number" type="text" name="amount"/>
 											<span class="help-block">
 												 
 											</span>
@@ -1224,7 +1277,7 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 										<div class="form-group">
 										<label class="control-label col-md-3">เลือกห้องประชุม</label>
 										<div class="col-md-4">
-											<select id="select2_sample2" name="select_reserve_db" class="form-control">
+											<select id="select2_sample2" name="select_reserve" class="form-control">
 												<optgroup label="ห้องประชุมขนาด 10 คน">
 												<option name="re01">ห้องประชุม 1</option>
 												<option name="re02">ห้องประชุม 2</option>
@@ -1255,11 +1308,8 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 									<label class="control-label col-md-3">วันที่ประชุม</label>
 										<div class="col-md-4">
 											<div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="mm/dd/yyyy">
-												<input type="text" class="form-control" name="datefrom_db">
-												<span class="input-group-addon">
-													 ถึงวันที่
-												</span>
-												<input type="text"  class="form-control" name="dateto_db">
+												<input type="text" class="form-control" name="date">
+												
 											</div>
 											<!-- /input-group -->
 											
@@ -1269,18 +1319,18 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 									<label class="control-label col-md-3">จากเวลา</label>
 										<div class="col-md-3">
 											<div class="input-group bootstrap-timepicker">
-												<input type="text" name="timefrom_db"class="form-control timepicker-default">
+												<input type="text" name="timefrom"class="form-control timepicker-default">
 												<span class="input-group-btn">
 													<button class="btn btn-default" type="button"><i class="fa fa-clock-o"></i></button>
 												</span>
 											</div>
 										</div>
-										</div>
+									</div>
 										<div class="form-group">
 										<label class="control-label col-md-3">ถึงเวลา</label>
 										<div class="col-md-3">
 											<div class="input-group bootstrap-timepicker">
-												<input type="text" name="timeto_db"class="form-control timepicker-default">
+												<input type="text" name="timeto"class="form-control timepicker-default">
 												<span class="input-group-btn">
 													<button class="btn btn-default" type="button"><i class="fa fa-clock-o"></i></button>
 												</span>
@@ -1290,13 +1340,13 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 									<div class="form-group">
 									<label class="control-label col-md-3">รายละเอียดการประชุม</label>
 										<div class="col-md-9">
-											<textarea name="description_db"class="ckeditor form-control"  rows="6"></textarea>
+											<textarea name="description"class="ckeditor form-control"  rows="6"></textarea>
 										</div>
 										</div>
 										<div class="form-group">
 										<label class="control-label col-md-3">เอกสารแนบ</label>
 										<div class="col-md-4">
-											<input type="file" name="file_db" class="default"/>
+											<input type="file" name="file" class="default"/>
 										</div>
 										</div>
 									</div>
