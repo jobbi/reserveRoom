@@ -10,6 +10,7 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="en" class="no-js">
+<meta charset="utf-8">
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
@@ -1163,31 +1164,40 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 												<div class="form-group">
 													<label class="col-md-2 control-label"></label>
 													<div class="col-md-12">
-														<center><table cellpadding="0" width="100%" height="5%" border="0">
-													  <tr>
-														<th colspan="7" scope="col"><center>แสดงรายการซ่อม</center></th>
-													  </tr>
-													  <tr>
-														<td bgcolor="6699FF" align="center"width="60" height="40">ลำดับที่</td>
-														<td bgcolor="6699FF" align="center"width="60" height="40">วันที่ซ่อม</td>
-														<td bgcolor="6699FF" align="center"width="100" height="40">เวลาที่ซ่อม</td>
-														<td bgcolor="6699FF" align="center"width="100" height="40">ห้องประชุม</td>
-														<td bgcolor="6699FF" align="center"width="100" height="40">รายการซ่อม</td>
-														<td bgcolor="6699FF" align="center"width="65" height="40">สถานะ</td>
-													
-													  </tr>
-																									  
-													  <tr>
-														<td bgcolor ="EEEEEE" align="center" width="60" height="40"<?php echo $objResult["datefix"];?>></td>
-														<td bgcolor ="EEEEEE" align="center" width="100" height="40"<?php echo $objResult["timefix"];?>></td>
-														<td bgcolor ="EEEEEE" align="center" width="100" height="40"<?php echo $objResult["select_reserve"];?>></td>
-														<td bgcolor ="EEEEEE" align="center" width="150" height="40"<?php echo $objResult[""];?>></td>
-														<td bgcolor ="EEEEEE" align="center" width="65" height="40"<?php echo $objResult["id_mem"];?>></td>
-														
-													 
-													  </tr>
-													</table>
-													</center>
+<?php
+include ("connect.php");
+
+//MySqli Select Query
+$query = pg_query("SELECT * FROM form_reportfix ORDER BY datereportfix DESC LIMIT 10  ");
+
+print '<table cellpadding="0" width="100%" height="5%" border="0">';
+print'<tr>';
+print'<th colspan="7" scope="col"><center>แสดงรายการซ่อม</center></th>';
+print'</tr>';
+print '<tr>';
+
+   print '<td bgcolor="6699FF" align="center"width="60" height="40">วันที่ซ่อม</td>';
+   print '<td bgcolor="6699FF" align="center"width="60" height="40">เวลาที่ซ่อม</td>';
+   print '<td bgcolor="6699FF" align="center"width="60" height="40">ห้องประชุม</td>';
+   print '<td bgcolor="6699FF" align="center"width="60" height="40">รายการซ่อม</td>';
+   print '<td bgcolor="6699FF" align="center"width="60" height="40">สถานะ</td>';
+print '</tr>';
+while ($row = pg_fetch_array($query)) {
+ 
+print '<tr>';
+
+   
+    print '<td bgcolor ="EEEEEE" align="center" width="60" height="40">'.$row["datereportfix"].'</td>';
+	print '<td bgcolor ="EEEEEE" align="center" width="60" height="40">'.$row["timereportfix"].'</td>';
+	print '<td bgcolor ="EEEEEE" align="center" width="60" height="40">'.$row["select_reserve"].'</td>';
+	print '<td bgcolor ="EEEEEE" align="center" width="60" height="40">'.$row["description_report"].'</td>';
+	print '<td bgcolor ="EEEEEE" align="center" width="60" height="40">'.$row["satus"].'</td>';
+print '</tr>';
+}  
+print '</table>';
+
+
+?>
 													</div>
 												</div>	
 											</div>

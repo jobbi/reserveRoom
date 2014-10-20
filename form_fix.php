@@ -1156,7 +1156,7 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 									</div>
 									<div class="portlet-body form">
 										<!-- BEGIN FORM-->
-										<form action="save_fix.php" class="form-horizontal" method="post">
+										<form id="FixForm" action="save_fix.php"class="form-horizontal" method="post">
 											<div class="form-body">
 											<div class="tools">
 										<a href="javascript:;" class="collapse"></a>
@@ -1168,7 +1168,7 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 														<div class="form-group">
 															<label class="control-label col-md-3">ชื่อผู้แจ้งซ่อม</label>
 															<div class="col-md-9">
-																<input type="text" name="namefix_db" class="form-control" placeholder="">
+																<input type="text" id="namefix" name="namefix_db" class="form-control" placeholder="">
 																<span class="help-block">
 																	
 																</span>
@@ -1183,7 +1183,7 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 												<div class="form-group">
 													<label class="control-label col-md-3">วันที่แจ้งซ่อม</label>
 														<div class="col-md-9">
-																<input type="date" name="datefix_db" class="form-control" placeholder="">
+																<input type="date" data-date-format="MM/DD/YYYY" id="datefix" name="datefix_db" class="form-control" placeholder="">
 																<span class="help-block">
 																ex.21/09/2557
 																</span>
@@ -1195,7 +1195,7 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 														<div class="form-group">
 										<label class="control-label col-md-3">เวลาแจ้งซ่อม</label>
 										<div class="col-md-9">
-											<input type="time" name="timefix_db"class="form-control" placeholder="">
+											<input type="time" id="timefix" name="timefix_db"class="form-control" placeholder="">
 												<span class="help-block">
 													ex.09.30
 												</span>
@@ -1248,7 +1248,7 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 														<div class="form-group">
 															<label class="control-label col-md-3">ประเภทอุปกรณ์</label>
 															<div class="col-md-9">
-																<select name="tool1_db" class="form-control">
+																<select id ="tool1" name="tool1_db" class="form-control">
 																<option> </option>
 																	<option name="projector">โปรเจคเตอร์</option>
 																	<option name="computer">คอมพิวเตอร์</option>
@@ -1267,7 +1267,7 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 															<label class="control-label col-md-3">รายละเอียดที่ 1</label>
 															
 															<div class="col-md-9">
-														<textarea class="wysihtml5 form-control"name ="description1_db" rows="4"></textarea>
+														<textarea class="wysihtml5 form-control" id="description1" name ="description1_db" rows="4"></textarea>
 													</div>
 												
 						
@@ -1486,6 +1486,8 @@ Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-templat
 <script src="assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
 <script src="assets/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS Add -->
+<script src="../js/fix.js" type="text/javascript"></script>
+<script src="..js/jquery.validate.js" type="text/javascript"></script>
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="assets/scripts/app.js"></script>
 <script src="assets/scripts/form-samples.js"></script>
